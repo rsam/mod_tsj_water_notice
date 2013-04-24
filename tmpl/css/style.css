@@ -1,0 +1,25 @@
+#tsjwaternotice {
+	text-align: center;
+	font-size: 16px;
+	border-style: solid;
+	border-color: #98bf21;
+	border-top-left-radius: 12px;
+	border-top-right-radius: 12px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 12px;
+}
+
+#tsjwaternotice span.green {
+	color: green;
+	font-size: 30px;
+}
+
+#tsjwaternotice span.red {
+	color: red;
+	font-size: 36px;
+}
+
+#tsjwaternotice span.black {
+	color: black;
+	font-size: 30px;
+}
