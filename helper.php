@@ -13,7 +13,6 @@ class TSJ_Water_Notice {
 		
 		$db->setQuery( "SELECT cfg_value FROM #__tsj_cfg WHERE cfg_name = 'water_StartDay';" );
 		$row =& $db->loadResult();
-
 		// Проверка на ошибки
 		if (!$result = $db->query()) {
 			//echo $this->db->stderr();
@@ -23,13 +22,48 @@ class TSJ_Water_Notice {
 		
 		$db->setQuery( "SELECT cfg_value FROM #__tsj_cfg WHERE cfg_name = 'water_StopDay';" );
 		$row =& $db->loadResult();
-
 		// Проверка на ошибки
 		if (!$result = $db->query()) {
 			//echo $this->db->stderr();
 			return false;
 		}
 		$params['water_stopday'] = $row;
+		
+		$db->setQuery( "SELECT cfg_value FROM #__tsj_cfg WHERE cfg_name = 'gaz_StartDay';" );
+		$row =& $db->loadResult();
+		// Проверка на ошибки
+		if (!$result = $db->query()) {
+			//echo $this->db->stderr();
+			return false;
+		}
+		$params['gaz_startday'] = $row;
+		
+		$db->setQuery( "SELECT cfg_value FROM #__tsj_cfg WHERE cfg_name = 'gaz_StopDay';" );
+		$row =& $db->loadResult();
+		// Проверка на ошибки
+		if (!$result = $db->query()) {
+			//echo $this->db->stderr();
+			return false;
+		}
+		$params['gaz_stopday'] = $row;
+		
+		$db->setQuery( "SELECT cfg_value FROM #__tsj_cfg WHERE cfg_name = 'electro_StartDay';" );
+		$row =& $db->loadResult();
+		// Проверка на ошибки
+		if (!$result = $db->query()) {
+			//echo $this->db->stderr();
+			return false;
+		}
+		$params['electro_startday'] = $row;
+		
+		$db->setQuery( "SELECT cfg_value FROM #__tsj_cfg WHERE cfg_name = 'electro_StopDay';" );
+		$row =& $db->loadResult();
+		// Проверка на ошибки
+		if (!$result = $db->query()) {
+			//echo $this->db->stderr();
+			return false;
+		}
+		$params['electro_stopday'] = $row;
 		
 	return $params;
 	}
