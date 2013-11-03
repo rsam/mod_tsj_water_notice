@@ -73,6 +73,7 @@ if(($today < $parametors['electro_startday']) && ($today > $parametors['electro_
 	$fail_electro = 1;
 }
 
+if($parametors['water_on'] == '1'){
 if($fail_water == 0){
 	if($today <= $parametors['water_stopday']){
 		// например сегодня 25 число, а конец интервала 28 число
@@ -119,7 +120,9 @@ if($fail_water == 0){
 		}
 	}
 }
+}
 
+if($parametors['gaz_on'] == '1'){
 if($fail_gaz == 0){
 	if($today <= $parametors['gaz_stopday']){
 		// например сегодня 25 число, а конец интервала 28 число
@@ -166,7 +169,9 @@ if($fail_gaz == 0){
 		}
 	}
 }
+}
 
+if($parametors['electro_on'] == '1'){
 if($fail_electro == 0){
 	if($today <= $parametors['electro_stopday']){
 		// например сегодня 25 число, а конец интервала 28 число
@@ -213,20 +218,27 @@ if($fail_electro == 0){
 		}
 	}
 }
+}
 
+if($parametors['water_on'] == '1'){
 if($fail_water != 0){
 	echo JText::_('MOD_TSJ_WATERS_NOTICE_4').'<br>'; //'Сегодня ввод показаний счетчиков недоступен';
 	echo 'До начала сдачи показаний счетчиков воды : '.$interval_water->days.' '. $_suf_days[TSJ_Water_Notice::suf_type($interval_water->days)];
 }
+}
 
+if($parametors['gaz_on'] == '1'){
 if($fail_gaz != 0){
 	echo JText::_('MOD_TSJ_GAZS_NOTICE_4').'<br>'; //'Сегодня ввод показаний счетчиков недоступен';
 	echo 'До начала сдачи показаний счетчиков газа : '.$interval_gaz->days.' '. $_suf_days[TSJ_Water_Notice::suf_type($interval_gaz->days)];
 }
+}
 
+if($parametors['electro_on'] == '1'){
 if($fail_electro != 0){
 	echo JText::_('MOD_TSJ_ELECTROS_NOTICE_4').'<br>'; //'Сегодня ввод показаний счетчиков недоступен';
 	echo 'До начала сдачи показаний счетчиков электроэнергии : '.$interval_electro->days.' '. $_suf_days[TSJ_Water_Notice::suf_type($interval_electro->days)];
+}
 }
 
 ?>

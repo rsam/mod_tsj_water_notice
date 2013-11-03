@@ -65,6 +65,31 @@ class TSJ_Water_Notice {
 		}
 		$params['electro_stopday'] = $row;
 		
+		// Общие параметры
+		$db->setQuery( "SELECT cfg_value FROM #__tsj_cfg WHERE cfg_name = 'water_on';" );
+		$row =& $db->loadResult();
+		if (!$result = $db->query()) {
+			//echo $this->db->stderr();
+			return false;
+		}
+		$params['water_on'] = $row;
+		
+		$db->setQuery( "SELECT cfg_value FROM #__tsj_cfg WHERE cfg_name = 'gaz_on';" );
+		$row =& $db->loadResult();
+		if (!$result = $db->query()) {
+			//echo $this->db->stderr();
+			return false;
+		}
+		$params['gaz_on'] = $row;
+		
+		$db->setQuery( "SELECT cfg_value FROM #__tsj_cfg WHERE cfg_name = 'electro_on';" );
+		$row =& $db->loadResult();
+		if (!$result = $db->query()) {
+			//echo $this->db->stderr();
+			return false;
+		}
+		$params['electro_on'] = $row;
+		
 	return $params;
 	}
 	
