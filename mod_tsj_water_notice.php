@@ -13,7 +13,7 @@ $parametors = TSJ_Water_Notice::getParams();
 jimport('joomla.document.html.html');
 $document =&JFactory::getDocument();
 $link = JURI::root().'modules/mod_tsj_water_notice/tmpl/css/style.css';
-$attribs = array('type' => 'text/css');
+//$attribs = array('type' => 'text/css');
 $document->addHeadLink(JRoute::_($link), 'stylesheet', 'rel', $attribs);
 
 $linknames = $params->get('linknames', 0);

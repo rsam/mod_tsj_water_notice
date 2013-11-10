@@ -22,54 +22,77 @@ $ym_today = date('Y-m');
 // Сегодня 4. А сдача с 5 по 2
 // Сегодня 4. А сдача с 1 по 2
 $fail_water = 0;
-
 if(($today < $parametors['water_startday']) && ($today < $parametors['water_stopday'])){
-	/*$startdate = date('Y-m-d', strtotime($ym_today.'-'.$parametors['water_startday']));
+	$startdate = date('Y-m-d', strtotime($ym_today.'-'.$parametors['water_startday']));
 	$datetime1 = date_create($startdate);
 	$datetime2 = date_create($full_today);
-	$interval_water = date_diff($datetime1, $datetime2);*/
+	$interval_water = date_diff($datetime1, $datetime2);
 	$fail_water = 1;
 }
 if(($today > $parametors['water_startday']) && ($today > $parametors['water_stopday'])){
 	if($parametors['water_startday'] < $parametors['water_stopday']){
-		/*$startdate = date('Y-m-d', strtotime("+1 month", strtotime($ym_today.'-'.$parametors['water_startday'])) );
+		$startdate = date('Y-m-d', strtotime("+1 month", strtotime($ym_today.'-'.$parametors['water_startday'])) );
 		$datetime1 = date_create($startdate);
 		$datetime2 = date_create($full_today);
-		$interval_water = date_diff($datetime1, $datetime2);*/
+		$interval_water = date_diff($datetime1, $datetime2);
 		$fail_water = 1;
 	}
 }
 if(($today < $parametors['water_startday']) && ($today > $parametors['water_stopday'])){
-	/*$startdate = date('Y-m-d', strtotime($ym_today.'-'.$parametors['water_startday']));
+	$startdate = date('Y-m-d', strtotime($ym_today.'-'.$parametors['water_startday']));
 	$datetime1 = date_create($startdate);
 	$datetime2 = date_create($full_today);
-	$interval_water = date_diff($datetime1, $datetime2);*/
+	$interval_water = date_diff($datetime1, $datetime2);
 	$fail_water = 1;
 }
 
 $fail_gaz = 0;
 if(($today < $parametors['gaz_startday']) && ($today < $parametors['gaz_stopday'])){
+	$startdate = date('Y-m-d', strtotime($ym_today.'-'.$parametors['gaz_startday']));
+	$datetime1 = date_create($startdate);
+	$datetime2 = date_create($full_today);
+	$interval_gaz = date_diff($datetime1, $datetime2);
 	$fail_gaz = 1;
 }
 if(($today > $parametors['gaz_startday']) && ($today > $parametors['gaz_stopday'])){
 	if($parametors['gaz_startday'] < $parametors['gaz_stopday']){
+		$startdate = date('Y-m-d', strtotime("+1 month", strtotime($ym_today.'-'.$parametors['gaz_startday'])) );
+		$datetime1 = date_create($startdate);
+		$datetime2 = date_create($full_today);
+		$interval_gaz = date_diff($datetime1, $datetime2);
 		$fail_gaz = 1;
 	}
 }
 if(($today < $parametors['gaz_startday']) && ($today > $parametors['gaz_stopday'])){
+	$startdate = date('Y-m-d', strtotime($ym_today.'-'.$parametors['gaz_startday']));
+	$datetime1 = date_create($startdate);
+	$datetime2 = date_create($full_today);
+	$interval_gaz = date_diff($datetime1, $datetime2);
 	$fail_gaz = 1;
 }
 
 $fail_electro = 0;
 if(($today < $parametors['electro_startday']) && ($today < $parametors['electro_stopday'])){
+	$startdate = date('Y-m-d', strtotime($ym_today.'-'.$parametors['electro_startday']));
+	$datetime1 = date_create($startdate);
+	$datetime2 = date_create($full_today);
+	$interval_electro = date_diff($datetime1, $datetime2);
 	$fail_electro = 1;
 }
 if(($today > $parametors['electro_startday']) && ($today > $parametors['electro_stopday'])){
 	if($parametors['electro_startday'] < $parametors['electro_stopday']){
+		$startdate = date('Y-m-d', strtotime("+1 month", strtotime($ym_today.'-'.$parametors['electro_startday'])) );
+		$datetime1 = date_create($startdate);
+		$datetime2 = date_create($full_today);
+		$interval_electro = date_diff($datetime1, $datetime2);
 		$fail_electro = 1;
 	}
 }
 if(($today < $parametors['electro_startday']) && ($today > $parametors['electro_stopday'])){
+	$startdate = date('Y-m-d', strtotime($ym_today.'-'.$parametors['electro_startday']));
+	$datetime1 = date_create($startdate);
+	$datetime2 = date_create($full_today);
+	$interval_electro = date_diff($datetime1, $datetime2);
 	$fail_electro = 1;
 }
 
