@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="2.5" client="site" method="upgrade">
+<extension type="module" version="3.3.0" client="site" method="upgrade">
 	<name>tsj mod_tsj_water_notice</name>
 	<creationDate>April 2013</creationDate>
    <author>Shibin Roman</author>
@@ -8,7 +8,7 @@
    <copyright>Copyright 2012-2013 Shibin Roman</copyright>
    <license>GNU/GPL3</license>
    <!-- The version string is recorded in the components table -->
-   <version>2.0.0</version>
+   <version>3.0.1</version>
 	<description>Module TSJ Water Notice</description>
 	
 	<files>

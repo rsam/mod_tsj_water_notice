@@ -5,7 +5,8 @@ defined('_JEXEC') or die;
 
 <div id="tsjwaternotice">
 <?php
-$_suf_days = array('день', 'дня', 'дней');
+$_suf_days = array(JText::_('MOD_TSJ_DAY'), JText::_('MOD_TSJ_DAY_S'), JText::_('MOD_TSJ_DAYS'));
+//$_suf_days = array('день', 'дня', 'дней');
 
 $today  = date('d');
 //$today  = 30;
@@ -105,7 +106,7 @@ if($fail_water == 0){
 		// Поправка в случае если в месяце меньше дней чем число указанное в настройках
 		$std = explode('-', $stopdate);
 
-		if(date('d',$sdt[2]) != date('d',$parametors['water_stopday'])) $stopdate = date('Y-m-d', strtotime($ym_today.'-'.$parametors['water_stopday']) + "-1 day");
+		if(date('d',$std[2]) != date('d',$parametors['water_stopday'])) $stopdate = date('Y-m-d', strtotime($ym_today.'-'.$parametors['water_stopday']) + "-1 day");
 
 		//echo 'stopdate='. $stopdate . '<br>';
 
@@ -154,7 +155,7 @@ if($fail_gaz == 0){
 		// Поправка в случае если в месяце меньше дней чем число указанное в настройках
 		$std = explode('-', $stopdate);
 
-		if(date('d',$sdt[2]) != date('d',$parametors['gaz_stopday'])) $stopdate = date('Y-m-d', strtotime($ym_today.'-'.$parametors['gaz_stopday']) + "-1 day");
+		if(date('d',$std[2]) != date('d',$parametors['gaz_stopday'])) $stopdate = date('Y-m-d', strtotime($ym_today.'-'.$parametors['gaz_stopday']) + "-1 day");
 
 		//echo 'stopdate='. $stopdate . '<br>';
 
@@ -203,7 +204,7 @@ if($fail_electro == 0){
 		// Поправка в случае если в месяце меньше дней чем число указанное в настройках
 		$std = explode('-', $stopdate);
 
-		if(date('d',$sdt[2]) != date('d',$parametors['electro_stopday'])) $stopdate = date('Y-m-d', strtotime($ym_today.'-'.$parametors['electro_stopday']) + "-1 day");
+		if(date('d',$std[2]) != date('d',$parametors['electro_stopday'])) $stopdate = date('Y-m-d', strtotime($ym_today.'-'.$parametors['electro_stopday']) + "-1 day");
 
 		//echo 'stopdate='. $stopdate . '<br>';
 
